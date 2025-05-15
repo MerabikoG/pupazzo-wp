@@ -1,0 +1,79 @@
+[
+  {
+    "id": "7",
+    "title_ka": "0+ თვე",
+    "title": "0+ Month",
+    "position": "1",
+    "hide": "0"
+  },
+  {
+    "id": "9",
+    "title_ka": "18+ თვე",
+    "title": "18+ Month",
+    "position": "5",
+    "hide": "0"
+  },
+  {
+    "id": "10",
+    "title_ka": "3+ წელი",
+    "title": "3+ years",
+    "position": "7",
+    "hide": "0"
+  },
+  {
+    "id": "11",
+    "title_ka": "4+ წელი",
+    "title": "4+ years",
+    "position": "8",
+    "hide": "0"
+  },
+  {
+    "id": "13",
+    "title_ka": "6+ თვე",
+    "title": "6+Month",
+    "position": "2",
+    "hide": "0"
+  },
+  {
+    "id": "15",
+    "title_ka": "12+ თვე",
+    "title": "12+ თვე",
+    "position": "4",
+    "hide": "0"
+  },
+  {
+    "id": "17",
+    "title_ka": "24+ თვე",
+    "title": "24+ M",
+    "position": "6",
+    "hide": "0"
+  },
+  {
+    "id": "18",
+    "title_ka": "5+ წელი",
+    "title": "5+ Year",
+    "position": "9",
+    "hide": "0"
+  },
+  {
+    "id": "19",
+    "title_ka": "10+ თვე",
+    "title": "",
+    "position": "3",
+    "hide": "0"
+  },
+  {
+    "id": "20",
+    "title_ka": "6+ წელი",
+    "title": "6+ Year",
+    "position": "10",
+    "hide": "0"
+  },
+  {
+    "id": "21",
+    "title_ka": "8+ წელი",
+    "title": "8+ Year",
+    "position": "11",
+    "hide": "0"
+  }
+]
