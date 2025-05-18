@@ -100,7 +100,7 @@ class Product
 
   public function setBrand(): Product
   {
-    $ids = Helper::SetProductCategoryByName($this->product->get_id(), $this->params['brand'], 'product_brand');
+    $ids = Helper::SetProductCategoryByName($this->product->get_id(), [$this->params['brand']], 'product_brand');
     if ($ids) $this->product->set_category_ids($ids);
     return $this;
   }
