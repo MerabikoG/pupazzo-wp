@@ -48,12 +48,14 @@ class Product
 
   public function setDescription(): Product
   {
-    preg_match('/<body>(.*?)<\/body>/s', $this->params['full_description'], $match);
+    if ($this->params['full_description']) {
+      preg_match('/<body>(.*?)<\/body>/s', $this->params['full_description'], $match);
 
-    if (!isset($match[0]) || !$match[0]) {
-      $this->product->set_description($this->params['full_description']);
-    } else {
-      $this->product->set_description($match[0]);
+      if (!isset($match[0]) || !$match[0]) {
+        $this->product->set_description($this->params['full_description']);
+      } else {
+        $this->product->set_description($match[0]);
+      }
     }
 
     return $this;
