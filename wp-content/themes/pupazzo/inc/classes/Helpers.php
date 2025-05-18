@@ -12,11 +12,11 @@ class Helper
 
     foreach ($category_names as $category_name) {
       // Get term by name
-      $term = get_term_by('name', $category_name, 'product_cat');
+      $term = get_term_by('name', $category_name, $tax);
 
       // If term doesn't exist, create it
       if (!$term) {
-        $term = wp_insert_term($category_name, 'product_cat');
+        $term = wp_insert_term($category_name, $tax);
         if (!is_wp_error($term)) {
           $category_ids[] = $term['term_id'];
         }
