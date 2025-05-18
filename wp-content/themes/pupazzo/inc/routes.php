@@ -57,7 +57,7 @@ add_action('rest_api_init', function () {
           }
 
           if ($product -> mainImage) {
-            $product -> mainImage = "https://pupazzo.ge/assets/images/products/{$product -> mainImage}";
+            $product -> mainImage = "https://pupazzo.ge/products/{$product -> mainImage}";
           }
 
           if ($product -> galleryImages) {
@@ -65,7 +65,7 @@ add_action('rest_api_init', function () {
             $product -> galleryImages = [];
 
             foreach($images as $image) {
-              $product -> galleryImages[] = "https://pupazzo.ge/assets/images/products/$image";
+              $product -> galleryImages[] = "https://pupazzo.ge/products/$image";
             }
           }
         }
