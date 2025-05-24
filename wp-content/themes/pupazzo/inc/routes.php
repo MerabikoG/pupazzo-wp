@@ -70,9 +70,8 @@ add_action('rest_api_init', function () {
           }
         }
 
-        // return $products;
-
         foreach($products as $product) {
+//           print_r($product); exit;
           try {
             $created = (new \Pupazzo\Product((object) $product))
                 ->createNewProduct()
@@ -82,15 +81,21 @@ add_action('rest_api_init', function () {
                 ->setSku()
                 ->setStock()
                 ->setPrice()
+                ->setBrand()
                 // ->setSalePrice()
                 ->setAges()
                 ->setThumb()
                 ->setGallery()
                 ->setStatus($product -> hide)
                 ->save();
+				wp_set_object_terms($created->get_id(), $product -> brand_id, 'product_brand', true);
+
           } catch (\Throwable $th) {
-            continue;
+            echo $th -> getMessage();
           }
+
+
+
         }
       },
       'permission_callback' => '__return_true'
