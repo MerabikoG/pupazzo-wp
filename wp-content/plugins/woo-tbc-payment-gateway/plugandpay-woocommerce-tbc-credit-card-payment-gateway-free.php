@@ -10,8 +10,6 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path: /languages
  * Text Domain: tbc-gateway-free
- * WC requires at least: 3.0.0
- * WC tested up to: 9.7.1
  *
  * Intellectual Property rights, and copyright, reserved by Plug and Pay, Ltd. as allowed by law include,
  * but are not limited to, the working concept, function, and behavior of this software,
