@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4c56fb221592bd03b6025d3891ad812e",
+    "packages": [
+        {
+            "name": "wearede/tbcpay-php",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/plugandpay/tbc-credit-card-payment-gateway-php-lib.git",
+                "reference": "63de9ba40a27e1f5c6e53f610fea5453eedd0062"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/plugandpay/tbc-credit-card-payment-gateway-php-lib/zipball/63de9ba40a27e1f5c6e53f610fea5453eedd0062",
+                "reference": "63de9ba40a27e1f5c6e53f610fea5453eedd0062",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WeAreDe\\TbcPay\\": "src/"
+                },
+                "psr-4": {
+                    "WeAreDe\\TbcPay\\": "src/WeAreDe/TbcPay/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sandro Dzneladze",
+                    "email": "sandro@weare.de.com"
+                }
+            ],
+            "description": "online payments php SDK - collect credit card payments via TbcBank processor",
+            "time": "2018-06-28T08:17:29+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -79,7 +79,7 @@
 							<?php _e('გამარჯობა', 'pupazzo') ?>, <?php echo $user->data->user_login; ?>
 						</a>
 					<?php else: ?>
-						<a href="/account" class="btn xs-user-account user-acc">
+						<a href="/my-account" class="btn xs-user-account user-acc">
 							<i class="fal fa-user"></i>
 							<?php _e('ავტორიზაცია / რეგისტრაცია', 'pupazzo') ?>
 						</a>
