@@ -1,0 +1,19 @@
+{
+    "name": "symbiosis/tbc-installment",
+    "description": "TBC Installment for WooCommerce",
+    "autoload": {
+        "files": [
+            "src/statuses.php"
+        ],
+        "psr-4": {
+            "Symbiosis\\TbcInstallment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Merab Gvantseladze",
+            "email": "merabi.gvanceladze@gmail.com"
+        }
+    ],
+    "require": {}
+}
