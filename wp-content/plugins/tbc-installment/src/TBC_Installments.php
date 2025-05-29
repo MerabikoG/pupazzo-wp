@@ -44,14 +44,6 @@ class TBC_Installments extends WC_Payment_Gateway
 	{
 		$order = wc_get_order($order_id);
 		$request = new TBC_Request($this->url, $this->api_secret, $this->api_key, $this->campaign, $this->merchant);
-		$package_ids = ['24664', '24667', '24665', '24668'];
-		$contracts_array = [];
-
-		foreach ($package_ids as $package_id) {
-			if (isset($_POST["package_" . $package_id]) && !empty($_POST["package_" . $package_id]))
-				$contracts_array[] = $_POST["package_" . $package_id];
-		}
-
 		$order = wc_get_order($order_id);
 
 		$data = [

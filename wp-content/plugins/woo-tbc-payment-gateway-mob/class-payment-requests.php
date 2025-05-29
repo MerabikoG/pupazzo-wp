@@ -37,15 +37,14 @@ class Symbiosis_Payment_Request {
   private function curl($query_string)
   {
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_SSLVERSION, 1); //0 
     curl_setopt($curl, CURLOPT_POSTFIELDS, $query_string);
     curl_setopt($curl, CURLOPT_VERBOSE, '1');
-    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, '0');
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, '0');
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, '2');
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, '1');
+    curl_setopt($curl, CURLOPT_CAINFO, $this->cert_path); // because of Self-Signed certificate at payment server.
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($curl, CURLOPT_TIMEOUT, 120);
     curl_setopt($curl, CURLOPT_SSLCERT, $this->cert_path);
-    curl_setopt($curl, CURLOPT_SSLCERTTYPE, "P12");
+    curl_setopt($curl, CURLOPT_SSLKEY, $this->cert_path);
     curl_setopt($curl, CURLOPT_SSLKEYPASSWD, $this->cert_pass);
     curl_setopt($curl, CURLOPT_URL, $this->submit_url);
 
