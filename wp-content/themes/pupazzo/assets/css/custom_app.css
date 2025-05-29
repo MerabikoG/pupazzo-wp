@@ -136,7 +136,26 @@ header nav .navbar-collapse .input-group.search-bar {
 header.large-screens {
 	top: 60px;
 	background: #feba52;
-	padding: 10px 96px;
+	padding: 0 96px;
+}
+
+.header-menu li {
+	padding-block: 30px;
+}
+
+ul.children-menu {
+	display: none;
+	position: absolute;
+	top: 89px;
+	left: 0;
+	width: 100%;
+	background: #fff;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.header-menu li:hover ul.children-menu {
+	display: block;
 }
 
 .admin-bar header.large-screens {
@@ -192,7 +211,7 @@ header.large-screens {
 	font-size: 12px;
 }
 
-.categories-block .categorie .p-w-active > a {
+.categories-block .categorie .p-w-active>a {
 	color: #fbce43;
 }
 
@@ -591,8 +610,8 @@ form.input-group.search-bar {
 	overflow: hidden;
 }
 
-.p-w-active > .age-checkbox::after,
-.p-w-active > a .age-checkbox::after {
+.p-w-active>.age-checkbox::after,
+.p-w-active>a .age-checkbox::after {
 	content: "";
 	position: absolute;
 	width: 10px;
@@ -765,10 +784,9 @@ body .wpc-filters-main-wrap li.wpc-term-count-0:not(.wpc-has-not-empty-children)
 	border-radius: 5px;
 }
 
-.wpc-filters-main-wrap li.wpc-term-item input[type=checkbox] {
-}
+.wpc-filters-main-wrap li.wpc-term-item input[type=checkbox] {}
 
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+.entry-content>*:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
 	max-width: unset !important
 }
 
@@ -796,7 +814,8 @@ body .wpc-filters-main-wrap li.wpc-term-count-0:not(.wpc-has-not-empty-children)
 	height: 400px;
 }
 
-.yith-wcwl-add-to-wishlist-button:is(button) svg, .yith-wcwl-add-to-wishlist-button:is(button) img {
+.yith-wcwl-add-to-wishlist-button:is(button) svg,
+.yith-wcwl-add-to-wishlist-button:is(button) img {
 	width: 30px;
 	height: 30px;
 }

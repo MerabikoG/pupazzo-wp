@@ -97,12 +97,23 @@
 					<div class="collapse navbar-collapse" id="mynavbar">
 						<div class="left-nav">
 							<a href="/" class="navbar-brand m-0 p-0"><img alt src="https://pupazzo.ge/assets/images/icons/logo-bear.svg"></a>
-							<ul class="navbar-nav m-0">
+							<ul class="navbar-nav m-0 header-menu">
 								<?php foreach ($menus as $menu): ?>
 									<li class="menu-item menu-<?php echo $menu->ID; ?>">
 										<a href="<?php echo $menu->url ?>">
 											<?php echo $menu->title ?>
 										</a>
+										<?php if (isset($menu->children) && !empty($menu->children)): ?>
+											<ul class="children-menu">
+												<?php foreach ($menu->children as $child): ?>
+													<li class="menu-item menu-<?php echo $child->ID; ?>">
+														<a href="<?php echo $child->url ?>">
+															<?php echo $child->title ?>
+														</a>
+													</li>
+												<?php endforeach; ?>
+											</ul>
+										<?php endif; ?>
 									</li>
 								<?php endforeach; ?>
 							</ul>

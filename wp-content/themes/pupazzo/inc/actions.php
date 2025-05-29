@@ -72,3 +72,26 @@ function alter_search_classes($classes)
 
 	return $classes;
 }
+
+
+add_action('woocommerce_order_status_changed', 'pupazzo_sync_order_fina', 10, 3);
+function pupazzo_sync_order_fina($order_id, $old_status, $new_status)
+{
+	if ($new_status == 'completed') {
+		$fina = new Fina();
+		$order = wc_get_order($order_id);
+		$fina_products = [];
+
+		foreach ($order->get_items() as $item) {
+			$fina_id = $fina->GetProductByCode($item->get_product()->get_sku());
+			$fina_products[] = [
+				"id" => $fina_id,
+				"sub_id" => 0,
+				"quantity" => $item->get_quantity(),
+				"price" => $item->get_total() / $item->get_quantity()
+			];
+		}
+
+		$fina->SaveDocProductOut($fina_products, $order->get_subtotal());
+	}
+}

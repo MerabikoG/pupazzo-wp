@@ -231,6 +231,7 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Theme Helper
 require get_template_directory() . '/inc/classes/Helpers.php';
+require get_template_directory() . '/inc/classes/Fina.php';
 require get_template_directory() . '/inc/classes/Product.php';
 
 // Symbiosis Actions

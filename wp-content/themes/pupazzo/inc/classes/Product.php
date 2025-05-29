@@ -35,8 +35,11 @@ class Product
 
   public function setCategory(): Product
   {
-    $ids = Helper::SetProductCategoryByName($this->product->get_id(), array_merge($this->params['category'], $this->params['sub_category']));
-    if ($ids) $this->product->set_category_ids($ids);
+    if ($this->params['category']) {
+      $ids = Helper::SetProductCategoryByName($this->product->get_id(), array_merge($this->params['category'], $this->params['sub_category']));
+      if ($ids) $this->product->set_category_ids($ids);
+    }
+    
     return $this;
   }
 
@@ -100,7 +103,9 @@ class Product
 
   public function setBrand(): Product
   {
-	wp_set_post_terms($this->product->get_id(), $this->params['brand'], 'product_brand', true);
+    if ($this->params['brand']) {
+      wp_set_post_terms($this->product->get_id(), $this->params['brand'], 'product_brand', true);
+    }
     return $this;
   }
 
