@@ -139,7 +139,7 @@ header.large-screens {
 	padding: 0 96px;
 }
 
-.header-menu li {
+.header-menu>li {
 	padding-block: 30px;
 }
 
@@ -149,9 +149,30 @@ ul.children-menu {
 	top: 89px;
 	left: 0;
 	width: 100%;
+	list-style: none;
 	background: #fff;
 	border-bottom-left-radius: 12px;
 	border-bottom-right-radius: 12px;
+	padding: 32px;
+	column-count: 3;
+}
+
+li.d-flex.menu-item>img {
+	width: 24px;
+}
+
+li.d-flex.menu-item {
+	font-size: 18px;
+	font-weight: 600;
+	border-bottom: 2px solid #fbce43;
+	width: fit-content;
+	margin-bottom: 10px;
+}
+
+li.child.menu-item>a {
+	font-size: 16px !important;
+	padding-left: 18px;
+	padding-block: 5px;
 }
 
 .header-menu li:hover ul.children-menu {

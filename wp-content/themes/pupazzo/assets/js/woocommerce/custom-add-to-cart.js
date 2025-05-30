@@ -193,6 +193,11 @@ jQuery(function ($) {
 
         $('.n-item-title').find('strong').text(productTitle);
         $('.n-item-image img').attr('src', productImage);
+        let header_cart_old_var = parseInt(jQuery('.menu-item .header-cart-count').text()) + 1;
+        let footer_cart_old_var = parseInt(jQuery('.mobile-actions .header-cart-count').text()) + 1;
+        
+        jQuery('.menu-item .header-cart-count').text(`${header_cart_old_var}`)
+        jQuery('.mobile-actions .header-cart-count').text(`${footer_cart_old_var}`)
 
         $('.notification-alert').animate({
           'bottom': "20px"

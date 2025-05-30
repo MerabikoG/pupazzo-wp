@@ -96,13 +96,34 @@
 				<nav class="navbar navbar-expand-lg p-0">
 					<div class="collapse navbar-collapse" id="mynavbar">
 						<div class="left-nav">
-							<a href="/" class="navbar-brand m-0 p-0"><img alt src="https://pupazzo.ge/assets/images/icons/logo-bear.svg"></a>
-							<ul class="navbar-nav m-0">
+							<a href="/" class="navbar-brand m-0 p-0"><img alt src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-bear.svg"></a>
+							<ul class="navbar-nav m-0 header-menu">
 								<?php foreach ($menus as $menu): ?>
 									<li class="menu-item menu-<?php echo $menu->ID; ?>">
 										<a href="<?php echo $menu->url ?>">
 											<?php echo $menu->title ?>
 										</a>
+										<?php if (isset($menu->children) && !empty($menu->children)): ?>
+											<ul class="children-menu">
+												<?php foreach ($menu->children as $child): ?>
+													<li class="d-flex menu-item menu-<?php echo $child->ID; ?>">
+														<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-bear.svg" alt="">
+														<a href="<?php echo $child->url ?>">
+															<?php echo $child->title ?>
+														</a>
+													</li>
+													<?php if (isset($child->children) && !empty($child->children)): ?>
+														<?php foreach ($child->children as $sub): ?>
+															<li class="child menu-item menu-<?php echo $sub->ID; ?>">
+																<a href="<?php echo $sub->url ?>">
+																	<?php echo $sub->title ?>
+																</a>
+															</li>
+														<?php endforeach; ?>
+													<?php endif; ?>
+												<?php endforeach; ?>
+											</ul>
+										<?php endif; ?>
 									</li>
 								<?php endforeach; ?>
 							</ul>
@@ -111,9 +132,10 @@
 
 						</div>
 						<div class="right-nav">
-							<form action="/search"
+							<form action="/"
 								class="input-group search-bar">
-								<input type="text" placeholder="Search..." name="q" required>
+								<input type="text" placeholder="Search..." name="s" required>
+								<input type="hidden" id="search-param" name="post_type" value="product">
 								<button class="search" type="submit"><i
 										class="far fa-search search-icon"></i></button>
 							</form>
@@ -179,19 +201,19 @@
 			</div>
 		</header>
 
-			<div class="page-title-banner">
-				<div class="container">
-					<div class="left-right-image">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/img-1.png"
-							class="left-img" alt>
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/img-2.png"
-							class="right-img" alt>
-					</div>
-					<div class="content">
-						<div class="title">
-							<h2><?php the_title(); ?></h2>
-						</div>
+		<div class="page-title-banner">
+			<div class="container">
+				<div class="left-right-image">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/img-1.png"
+						class="left-img" alt>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/img-2.png"
+						class="right-img" alt>
+				</div>
+				<div class="content">
+					<div class="title">
+						<h2><?php the_title(); ?></h2>
 					</div>
 				</div>
 			</div>
-			<div class="page-content">
+		</div>
+		<div class="page-content">

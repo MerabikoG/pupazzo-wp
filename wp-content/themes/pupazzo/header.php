@@ -20,7 +20,6 @@
 	<?php wp_body_open();
 	$options = get_fields('option');
 	$menus = generate_menu_tree(menu_items('primary_menu'));
-	wp_reset_query();
 	?>
 
 	<div class="position-absolute products-categories-menu">
@@ -46,7 +45,6 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
-
 	</div>
 	<!-- Back To Top Start -->
 	<a href="#main-wrapper" id="backto-top" class="back-to-top">
@@ -96,7 +94,7 @@
 				<nav class="navbar navbar-expand-lg p-0">
 					<div class="collapse navbar-collapse" id="mynavbar">
 						<div class="left-nav">
-							<a href="/" class="navbar-brand m-0 p-0"><img alt src="https://pupazzo.ge/assets/images/icons/logo-bear.svg"></a>
+							<a href="/" class="navbar-brand m-0 p-0"><img alt src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-bear.svg"></a>
 							<ul class="navbar-nav m-0 header-menu">
 								<?php foreach ($menus as $menu): ?>
 									<li class="menu-item menu-<?php echo $menu->ID; ?>">
@@ -106,11 +104,21 @@
 										<?php if (isset($menu->children) && !empty($menu->children)): ?>
 											<ul class="children-menu">
 												<?php foreach ($menu->children as $child): ?>
-													<li class="menu-item menu-<?php echo $child->ID; ?>">
+													<li class="d-flex menu-item menu-<?php echo $child->ID; ?>">
+														<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-bear.svg" alt="">
 														<a href="<?php echo $child->url ?>">
 															<?php echo $child->title ?>
 														</a>
 													</li>
+													<?php if (isset($child->children) && !empty($child->children)): ?>
+														<?php foreach ($child->children as $sub): ?>
+															<li class="child menu-item menu-<?php echo $sub->ID; ?>">
+																<a href="<?php echo $sub->url ?>">
+																	<?php echo $sub->title ?>
+																</a>
+															</li>
+														<?php endforeach; ?>
+													<?php endif; ?>
 												<?php endforeach; ?>
 											</ul>
 										<?php endif; ?>
